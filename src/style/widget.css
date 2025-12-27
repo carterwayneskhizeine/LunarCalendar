@@ -8,8 +8,8 @@
     font-family: Arial, Helvetica, "Microsoft Yahei";
     color: #1f2328;
     container-type: inline-size;
-    --primary-color: #2095f2;
-    --secondary-color: #ffaa00;
+    --primary-color: #d4af37;
+    --secondary-color: #f4d03f;
     --base-size: 1px;
     --base-size-mobile: 1px;
 }
@@ -391,15 +391,17 @@ a {
 }
 
 /* ========================================
-   夜间模式样式 (NIGHT MODE)
+   夜间模式样式 (NIGHT MODE - Black & Gold Luxury Theme)
    ======================================== */
 
 /* 基础变量覆盖 */
 .mod-calendar.mode-night {
-    background: #1a1a1a;
+    /* 纯黑背景 */
+    background: #000000;
+    color: #d4af37;
 }
 
-/* 移除所有圆角 - 扁平设计 */
+/* 移除所有圆角 - 适配 DaisyUI 的扁平化或微圆角风格 */
 .mod-calendar.mode-night,
 .mod-calendar.mode-night .info .day,
 .mod-calendar.mode-night .box,
@@ -409,7 +411,7 @@ a {
 .mod-calendar.mode-night .selector a.goback,
 .mod-calendar.mode-night .selector select,
 .mod-calendar.mode-night table tbody a {
-    border-radius: 0 !important;
+    border-radius: 6px !important; /* Slight radius for modern feel */
 }
 
 /* 移除所有阴影 */
@@ -420,8 +422,8 @@ a {
 
 /* 主容器 */
 .mod-calendar.mode-night {
-    padding: 16px;
-    gap: 16px;
+    padding: 24px;
+    gap: 24px;
 }
 
 /* 信息面板 */
@@ -430,8 +432,10 @@ a {
 }
 
 .mod-calendar.mode-night .info .day {
-    background: #3a3a3a;
-    color: #e0e0e0;
+    /* 金色背景 */
+    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 50%, #b8960e 100%);
+    color: #0a0a0a;
+    border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .mod-calendar.mode-night .info a {
@@ -439,30 +443,31 @@ a {
 }
 
 .mod-calendar.mode-night .info .list {
-    border-top: 1px solid #333333;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 /* 日历主体 */
 .mod-calendar.mode-night .box {
-    background: #1a1a1a;
-    border: 1px solid #333333;
+    background: #000000;
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 /* 选择器控件 */
 .mod-calendar.mode-night .selector a {
-    border: 1px solid #333333;
-    background: #3a3a3a;
-    color: #e0e0e0;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #000000;
+    color: #d4af37;
 }
 
 .mod-calendar.mode-night .selector a:hover {
-    border-color: #2a2a2a;
-    background: #2a2a2a;
+    border-color: #f4d03f;
+    color: #f4d03f;
+    background: #000000;
 }
 
 .mod-calendar.mode-night .selector select {
-    border: 1px solid #333333;
-    background: #1a1a1a;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #000000;
     color: #e0e0e0;
 }
 
@@ -472,19 +477,20 @@ a {
 }
 
 .mod-calendar.mode-night table thead th {
-    color: #e0e0e0;
+    color: #d4af37;
+    font-weight: 600;
 }
 
 .mod-calendar.mode-night table thead th:first-child::after {
-    background: #3a3a3a;
+    background: #000000;
 }
 
 .mod-calendar.mode-night table thead tr {
-    border-bottom: 3px solid #333333;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
 }
 
 .mod-calendar.mode-night table td {
-    border: 1px solid #333333;
+    border: 1px solid #000000;
 }
 
 .mod-calendar.mode-night table tbody a {
@@ -493,8 +499,9 @@ a {
 }
 
 .mod-calendar.mode-night table tbody a:hover {
-    border: 1px solid #2a2a2a;
-    background: #2a2a2a;
+    border: 1px solid #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    color: #f4d03f;
 }
 
 .mod-calendar.mode-night table .s1 {
@@ -505,30 +512,38 @@ a {
     color: #a0a0a0;
 }
 
-/* 状态样式 - 扁平设计 */
+/* 状态样式 */
 .mod-calendar.mode-night table td.active a {
-    border: 1px solid #333333;
-    background: #333333;
+    border: 1px solid #d4af37;
+    background: #d4af37;
+    color: #0a0a0a;
+}
+
+.mod-calendar.mode-night table td.active a .s1,
+.mod-calendar.mode-night table td.active a .s2 {
+    color: #0a0a0a;
 }
 
 .mod-calendar.mode-night table td.holiday a {
-    background: #1a2a1a;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .mod-calendar.mode-night table td.holiday i {
-    color: #4a9a4a;
+    color: #f4d03f;
 }
 
 .mod-calendar.mode-night table td.work a {
-    background: #2a1a1a;
+    background: rgba(255, 87, 34, 0.15);
 }
 
 .mod-calendar.mode-night table td.work i {
-    color: #a44a4a;
+    color: #ff5722;
 }
 
 .mod-calendar.mode-night table td.today a {
-    background: #2a251a;
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(244, 208, 63, 0.6);
 }
 
 .mod-calendar.mode-night table td.disabled a {
@@ -543,8 +558,8 @@ a {
     }
 
     .mod-calendar.mode-night .selector a.goback {
-        background: #3a3a3a;
-        color: #e0e0e0;
-        border-radius: 0;
+        background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+        color: #0a0a0a;
+        border-radius: 4px !important;
     }
 }

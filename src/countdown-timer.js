@@ -37,38 +37,51 @@ class CountdownTimer extends HTMLElement {
 
     render() {
         const isNight = this.theme === 'night';
+        // Black & Gold Luxury Theme Colors
+        const theme = {
+            bg: isNight ? 'rgba(10, 10, 10, 0)' : '#ffffff',
+            textPrimary: isNight ? '#e0e0e0' : '#1f2937',
+            textSecondary: isNight ? '#d4af37' : '#4b5563',
+            accent: isNight ? '#f4d03f' : '#d926a9',
+            border: isNight ? 'rgba(212, 175, 55, 0.3)' : '#e5e7eb',
+            msgColor: isNight ? '#a0a0a0' : '#6b7280'
+        };
+
         const styles = `
             <style>
                 :host {
                     display: block;
                     width: 100%;
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    --bg-color: ${isNight ? '#1a1a1a' : '#ffffff'};
-                    --text-primary: ${isNight ? '#e0e0e0' : '#1a1a1a'};
-                    --text-secondary: ${isNight ? '#a0a0a0' : '#666666'};
-                    --accent-color: ${isNight ? '#4a9a4a' : '#2095f2'};
-                    --border-color: ${isNight ? '#333333' : '#e0e0e0'};
+                    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+                    --bg-color: ${theme.bg};
+                    --text-primary: ${theme.textPrimary};
+                    --text-secondary: ${theme.textSecondary};
+                    --accent-color: ${theme.accent};
+                    --border-color: ${theme.border};
+                    --msg-color: ${theme.msgColor};
                 }
 
                 .countdown-container {
                     background: var(--bg-color);
-                    padding: 20px;
+                    padding: 16px;
                     text-align: center;
-                    border: 1px solid var(--border-color);
+                    border-radius: 16px;
+                    /* Glassmorphism support if needed, otherwise handled by parent */
                 }
 
                 .countdown-title {
-                    color: var(--text-secondary);
-                    font-size: 14px;
-                    margin-bottom: 8px;
+                    color: var(--msg-color);
+                    font-size: 16px;
+                    margin-bottom: 24px;
                     text-transform: uppercase;
-                    letter-spacing: 1px;
+                    letter-spacing: 2px;
+                    font-weight: 500;
                 }
 
                 .countdown-display {
                     display: flex;
                     justify-content: center;
-                    gap: 16px;
+                    gap: 24px;
                     flex-wrap: wrap;
                 }
 
@@ -76,32 +89,43 @@ class CountdownTimer extends HTMLElement {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    min-width: 60px;
+                    min-width: 45px;
+                    padding: 8px;
+                    background: rgba(0,0,0,0.2);
+                    border-radius: 12px;
+                    border: 1px solid var(--border-color);
+                    backdrop-filter: blur(4px);
                 }
 
                 .time-value {
-                    font-size: 32px;
-                    font-weight: bold;
-                    color: var(--text-primary);
+                    font-size: 21px;
+                    font-weight: 800;
+                    color: var(--text-secondary);
                     line-height: 1;
-                    margin-bottom: 4px;
+                    margin-bottom: 8px;
+                    font-variant-numeric: tabular-nums;
+                    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
                 }
 
                 .time-label {
-                    font-size: 12px;
-                    color: var(--text-secondary);
+                    font-size: 14px;
+                    color: var(--msg-color);
                     text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 600;
                 }
 
                 .target-date {
-                    margin-top: 16px;
+                    margin-top: 24px;
                     color: var(--accent-color);
                     font-size: 14px;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
                 }
 
                 @media (max-width: 480px) {
                     .countdown-container {
-                        padding: 16px;
+                        padding: 8px;
                     }
 
                     .countdown-display {
@@ -109,15 +133,16 @@ class CountdownTimer extends HTMLElement {
                     }
 
                     .time-unit {
-                        min-width: 50px;
+                        min-width: 30px;
+                        padding: 6px;
                     }
 
                     .time-value {
-                        font-size: 24px;
+                        font-size: 14px;
                     }
 
                     .time-label {
-                        font-size: 10px;
+                        font-size: 12px;
                     }
                 }
             </style>
@@ -126,7 +151,7 @@ class CountdownTimer extends HTMLElement {
         this.shadowRoot.innerHTML = `
             ${styles}
             <div class="countdown-container">
-                <div class="countdown-title">距离农历丙午年(马年)春节还有</div>
+                <!-- <div class="countdown-title">距离农历丙午年春节还有</div> -->
                 <div class="countdown-display">
                     <div class="time-unit">
                         <span class="time-value" id="days">0</span>
@@ -145,7 +170,7 @@ class CountdownTimer extends HTMLElement {
                         <span class="time-label">秒</span>
                     </div>
                 </div>
-                <div class="target-date">2026年2月17日 春节</div>
+                <!-- <div class="target-date">2026年2月17日 春节</div> -->
             </div>
         `;
 

@@ -1,81 +1,101 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="luxury">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
     <title>农历夜历 - 2026春节倒计时</title>
     <meta name="description" content="中国农历夜历，2026年春节倒计时" />
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            primary: '#d4af37',
+                            light: '#f4d03f',
+                            dark: '#b8960e',
+                        },
+                        gray: {
+                            dark: '#1a1a1a',
+                            medium: '#2d2d2d',
+                            light: '#404040',
+                        }
+                    }
+                },
+                daisyui: {
+                    themes: [
+                        {
+                            luxury: {
+                                "primary": "#d4af37",
+                                "secondary": "#f4d03f",
+                                "accent": "#b8960e",
+                                "neutral": "#404040",
+                                "base-100": "#0a0a0a",
+                                "base-200": "#1a1a1a",
+                                "base-300": "#2d2d2d",
+                                "info": "#3b82f6",
+                                "success": "#10b981",
+                                "warning": "#f59e0b",
+                                "error": "#ef4444",
+                            },
+                        },
+                    ],
+                },
+            }
+        }
+    </script>
 
     <style>
-        /* 重置和基础样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Custom Styles for integrations */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            width: 100%;
-            flex: 1;
-        }
-
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #333;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 32px;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .countdown-section {
-            margin-bottom: 30px;
-        }
-
-        .calendar-section {
-            margin-bottom: 30px;
-        }
-
-        /* 全宽日历 */
+        /* Calendar Widget Customization */
         widget-calendar {
             display: block;
             width: 100%;
             max-width: none;
+            --primary-color: #d4af37; /* 金色 */
+            --secondary-color: #f4d03f; /* 浅金色 */
         }
 
-        .footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid #333;
-            color: #666;
-            font-size: 14px;
+        /* 自定义主题颜色 */
+        :root {
+            --gold-primary: #d4af37;
+            --gold-light: #f4d03f;
+            --gold-dark: #b8960e;
+            --gray-dark: #1a1a1a;
+            --gray-medium: #2d2d2d;
+            --gray-light: #404040;
         }
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
+        /* 文字渐变效果 */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-            .header h1 {
-                font-size: 24px;
-            }
+        /* 卡片金色边框效果 */
+        .card {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
         }
     </style>
 
@@ -86,23 +106,36 @@
     <!-- 加载倒计时组件 -->
     <script src="dist/countdown-timer.min.js"></script>
 </head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>农历夜历</h1>
-        </header>
+<body class="text-base-content min-h-screen">
 
-        <section class="countdown-section">
-            <countdown-timer theme="night" target="2026-02-17T00:00:00"></countdown-timer>
-        </section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
 
-        <section class="calendar-section">
-            <widget-calendar mode="night"></widget-calendar>
-        </section>
-    </div>
+        <div class="w-full grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+            <!-- Countdown Section - Left (1/4 width on Desktop) -->
+            <section class="lg:col-span-1">
+                <div class="items-center text-center">
+                    <div class="w-full transform hover:scale-[1.01] transition-transform duration-300">
+                        <countdown-timer theme="night" target="2026-02-17T00:00:00"></countdown-timer>
+                    </div>
+                    <div class="mt-6 badge badge-outline badge-lg p-4 gap-2" style="border-color: #d4af37; color: #f4d03f;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        2026年2月17日
+                    </div>
+                </div>
+            </section>
 
-    <footer class="footer">
-        <p>农历夜历 - 开源农历工具</p>
-    </footer>
+            <!-- Calendar Section - Right (3/4 width on Desktop) -->
+            <section class="lg:col-span-3">
+                <div class="card bg-base-100 shadow-2xl overflow-hidden border border-base-content/5 h-full">
+                    <div class="card-body p-0">
+                        <widget-calendar mode="night"></widget-calendar>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
 </body>
 </html>
