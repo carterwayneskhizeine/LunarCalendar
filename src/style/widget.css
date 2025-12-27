@@ -389,3 +389,162 @@ a {
         display: none;
     }
 }
+
+/* ========================================
+   夜间模式样式 (NIGHT MODE)
+   ======================================== */
+
+/* 基础变量覆盖 */
+.mod-calendar.mode-night {
+    background: #1a1a1a;
+}
+
+/* 移除所有圆角 - 扁平设计 */
+.mod-calendar.mode-night,
+.mod-calendar.mode-night .info .day,
+.mod-calendar.mode-night .box,
+.mod-calendar.mode-night .table,
+.mod-calendar.mode-night table thead th:first-child::after,
+.mod-calendar.mode-night .selector a,
+.mod-calendar.mode-night .selector a.goback,
+.mod-calendar.mode-night .selector select,
+.mod-calendar.mode-night table tbody a {
+    border-radius: 0 !important;
+}
+
+/* 移除所有阴影 */
+.mod-calendar.mode-night,
+.mod-calendar.mode-night * {
+    box-shadow: none !important;
+}
+
+/* 主容器 */
+.mod-calendar.mode-night {
+    padding: 16px;
+    gap: 16px;
+}
+
+/* 信息面板 */
+.mod-calendar.mode-night .info {
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night .info .day {
+    background: #3a3a3a;
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night .info a {
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night .info .list {
+    border-top: 1px solid #333333;
+}
+
+/* 日历主体 */
+.mod-calendar.mode-night .box {
+    background: #1a1a1a;
+    border: 1px solid #333333;
+}
+
+/* 选择器控件 */
+.mod-calendar.mode-night .selector a {
+    border: 1px solid #333333;
+    background: #3a3a3a;
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night .selector a:hover {
+    border-color: #2a2a2a;
+    background: #2a2a2a;
+}
+
+.mod-calendar.mode-night .selector select {
+    border: 1px solid #333333;
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* 表格样式 */
+.mod-calendar.mode-night table {
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night table thead th {
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night table thead th:first-child::after {
+    background: #3a3a3a;
+}
+
+.mod-calendar.mode-night table thead tr {
+    border-bottom: 3px solid #333333;
+}
+
+.mod-calendar.mode-night table td {
+    border: 1px solid #333333;
+}
+
+.mod-calendar.mode-night table tbody a {
+    border: 1px solid transparent;
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night table tbody a:hover {
+    border: 1px solid #2a2a2a;
+    background: #2a2a2a;
+}
+
+.mod-calendar.mode-night table .s1 {
+    color: #e0e0e0;
+}
+
+.mod-calendar.mode-night table .s2 {
+    color: #a0a0a0;
+}
+
+/* 状态样式 - 扁平设计 */
+.mod-calendar.mode-night table td.active a {
+    border: 1px solid #333333;
+    background: #333333;
+}
+
+.mod-calendar.mode-night table td.holiday a {
+    background: #1a2a1a;
+}
+
+.mod-calendar.mode-night table td.holiday i {
+    color: #4a9a4a;
+}
+
+.mod-calendar.mode-night table td.work a {
+    background: #2a1a1a;
+}
+
+.mod-calendar.mode-night table td.work i {
+    color: #a44a4a;
+}
+
+.mod-calendar.mode-night table td.today a {
+    background: #2a251a;
+}
+
+.mod-calendar.mode-night table td.disabled a {
+    opacity: 0.3;
+}
+
+/* 移动端适配 */
+@container (max-width: 480px) {
+    .mod-calendar.mode-night {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .mod-calendar.mode-night .selector a.goback {
+        background: #3a3a3a;
+        color: #e0e0e0;
+        border-radius: 0;
+    }
+}

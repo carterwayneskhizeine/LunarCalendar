@@ -58,4 +58,15 @@ const commonPlugins = [
     watch: {
         exclude: 'node_modules/**'
     }
+},{
+    input: './src/countdown-timer.js',
+    output:[{
+        file: './dist/countdown-timer.min.js',
+        format: 'umd',
+        banner
+    }],
+    plugins: commonPlugins,
+    watch: {
+        exclude: 'node_modules/**'
+    }
 }];
