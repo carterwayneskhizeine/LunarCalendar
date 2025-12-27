@@ -63,7 +63,7 @@ class CountdownTimer extends HTMLElement {
 
                 .countdown-container {
                     background: var(--bg-color);
-                    padding: 16px;
+                    padding: 8px;
                     text-align: center;
                     border-radius: 16px;
                     /* Glassmorphism support if needed, otherwise handled by parent */
@@ -81,34 +81,35 @@ class CountdownTimer extends HTMLElement {
                 .countdown-display {
                     display: flex;
                     justify-content: center;
-                    gap: 24px;
-                    flex-wrap: wrap;
+                    gap: clamp(8px, 2vw, 24px);
+                    flex-wrap: nowrap;
                 }
 
                 .time-unit {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    min-width: 45px;
-                    padding: 8px;
+                    flex: 1;
+                    min-width: 0;
+                    padding: clamp(8px, 1.5vw, 16px);
                     background: rgba(0,0,0,0.2);
                     border-radius: 12px;
-                    border: 1px solid var(--border-color);
+                    border: none;
                     backdrop-filter: blur(4px);
                 }
 
                 .time-value {
-                    font-size: 21px;
+                    font-size: clamp(18px, 5vw, 42px);
                     font-weight: 800;
                     color: var(--text-secondary);
                     line-height: 1;
-                    margin-bottom: 8px;
+                    margin-bottom: clamp(4px, 1vw, 8px);
                     font-variant-numeric: tabular-nums;
                     text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
                 }
 
                 .time-label {
-                    font-size: 14px;
+                    font-size: clamp(10px, 2vw, 14px);
                     color: var(--msg-color);
                     text-transform: uppercase;
                     letter-spacing: 1px;
@@ -125,24 +126,7 @@ class CountdownTimer extends HTMLElement {
 
                 @media (max-width: 480px) {
                     .countdown-container {
-                        padding: 8px;
-                    }
-
-                    .countdown-display {
-                        gap: 12px;
-                    }
-
-                    .time-unit {
-                        min-width: 30px;
-                        padding: 6px;
-                    }
-
-                    .time-value {
-                        font-size: 14px;
-                    }
-
-                    .time-label {
-                        font-size: 12px;
+                        padding: 4px;
                     }
                 }
             </style>

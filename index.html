@@ -3,9 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
-    <title>农历夜历 - 2026春节倒计时</title>
-    <meta name="description" content="中国农历夜历，2026年春节倒计时" />
-    
+    <title>农历夜历</title>
+    <meta name="description" content="农历夜历" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23f0d577%22/></svg>" />
+
     <!-- Tailwind CSS & DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -109,25 +112,21 @@
 <body class="text-base-content min-h-screen">
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
+    <main class="container mx-auto px-4 py-8 min-h-screen">
 
-        <div class="w-full grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
-            <!-- Countdown Section - Left (1/4 width on Desktop) -->
-            <section class="lg:col-span-1">
+        <div class="w-full max-w-4xl mx-auto flex flex-col gap-0">
+            <!-- Countdown Section -->
+            <section class="w-full">
                 <div class="items-center text-center">
                     <div class="w-full transform hover:scale-[1.01] transition-transform duration-300">
                         <countdown-timer theme="night" target="2026-02-17T00:00:00"></countdown-timer>
                     </div>
-                    <div class="mt-6 badge badge-outline badge-lg p-4 gap-2" style="border-color: #d4af37; color: #f4d03f;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        2026年2月17日
-                    </div>
                 </div>
             </section>
 
-            <!-- Calendar Section - Right (3/4 width on Desktop) -->
-            <section class="lg:col-span-3">
-                <div class="card bg-base-100 shadow-2xl overflow-hidden border border-base-content/5 h-full">
+            <!-- Calendar Section -->
+            <section class="w-full">
+                <div class="card bg-base-100 shadow-2xl overflow-hidden border border-base-content/5">
                     <div class="card-body p-0">
                         <widget-calendar mode="night"></widget-calendar>
                     </div>
