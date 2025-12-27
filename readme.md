@@ -6,40 +6,14 @@
 
 这是一个现代化的夜间模式农历日历网站,具有以下特点:
 
-- **夜间模式设计** - 极简扁平设计,深色背景护眼舒适
+- **夜间模式设计** - 极简设计,深色背景护眼舒适
 - **春节倒计时** - 实时倒计时至2026年2月17日(农历丙午年春节)
 - **响应式布局** - 完美适配桌面端和移动设备
 - **开源算法** - 基于 GB/T33661—2017 标准的农历公历换算
 
 ## 在线预览
 
-直接打开 `index.html` 即可使用,无需服务器环境。
-
-## 主要特性
-
-### 🌙 夜间模式
-- 深色背景 (#0a0a0a) 减少眼睛疲劳
-- 扁平化设计,无圆角、无阴影
-- 高对比度配色,文字清晰易读
-
-### 📅 日历功能
-- 支持1900-2100年农历公历转换
-- 显示干支、生肖、节气、节日
-- 休假日/工作日标记
-- 今天日期高亮显示
-
-### ⏰ 倒计时组件
-- 实时显示距离2026年春节的天数、时、分、秒
-- 自动更新,精准计时
-- 支持自定义目标日期和主题
-
-## 原项目
-
-本项目基于 [mumuy/calendar](https://github.com/mumuy/calendar) 修改而来:
-
-- **原项目**: [https://github.com/mumuy/calendar](https://github.com/mumuy/calendar)
-- **作者**: mumuy
-- **协议**: MIT License
+[https://lunarcalender.netlify.app/](https://lunarcalender.netlify.app/)
 
 ## 修改内容
 
@@ -47,8 +21,6 @@
 
 1. ✨ 新增 `mode-night` 夜间模式样式
 2. ✨ 新增 `countdown-timer` 倒计时 Web Component
-3. ✨ 新增夜间模式落地页 `index.html`
-4. ✨ 更新构建配置,支持倒计时组件打包
 
 ## 使用方法
 
@@ -122,22 +94,13 @@ npm run build
 npm run watch
 ```
 
-构建后会生成以下文件:
-- `dist/calendar.min.js` - 日历核心库
-- `dist/calendar.min.mjs` - ES Module 版本
-- `dist/widget-calendar.min.js` - 日历组件
-- `dist/countdown-timer.min.js` - 倒计时组件
+## 原项目
 
-## 技术栈
+本项目基于 [mumuy/calendar](https://github.com/mumuy/calendar) 修改而来:
 
-- **原生 JavaScript** - 无框架依赖
-- **Web Component** - 使用 Shadow DOM 实现组件化
-- **Rollup** - 模块打包
-- **Babel** - ES6+ 转译
-
-## 开源协议
-
-基于原项目的 MIT License 开源。
+- **原项目**: [https://github.com/mumuy/calendar](https://github.com/mumuy/calendar)
+- **作者**: mumuy
+- **协议**: MIT License
 
 ## 致谢
 
