@@ -519,9 +519,28 @@ a {
     color: #0a0a0a;
 }
 
-.mod-calendar.mode-night table td.active a .s1,
-.mod-calendar.mode-night table td.active a .s2 {
+/* 非今天的日期被选中：黑色 */
+.mod-calendar.mode-night table td.active:not(.today) a .s1,
+.mod-calendar.mode-night table td.active:not(.today) a .s2 {
     color: #0a0a0a;
+}
+
+/* 今天的日期被选中：金黄色 */
+.mod-calendar.mode-night table td.today.active a .s1,
+.mod-calendar.mode-night table td.today.active a .s2 {
+    color: #d4af37;
+}
+
+/* 节假日被选中：金色 */
+.mod-calendar.mode-night table td.holiday.active a .s1,
+.mod-calendar.mode-night table td.holiday.active a .s2 {
+    color: #d4af37;
+}
+
+/* 调休上班日被选中：金色 */
+.mod-calendar.mode-night table td.work.active a .s1,
+.mod-calendar.mode-night table td.work.active a .s2 {
+    color: #d4af37;
 }
 
 .mod-calendar.mode-night table td.holiday a {
