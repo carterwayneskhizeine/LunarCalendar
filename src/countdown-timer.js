@@ -37,13 +37,13 @@ class CountdownTimer extends HTMLElement {
 
     render() {
         const isNight = this.theme === 'night';
-        // Black & Gold Luxury Theme Colors
+        // Black & Blue Theme Colors
         const theme = {
             bg: isNight ? 'rgba(10, 10, 10, 0)' : '#ffffff',
             textPrimary: isNight ? '#e0e0e0' : '#1f2937',
-            textSecondary: isNight ? '#d4af37' : '#4b5563',
-            accent: isNight ? '#f4d03f' : '#d926a9',
-            border: isNight ? 'rgba(212, 175, 55, 0.3)' : '#e5e7eb',
+            textSecondary: isNight ? '#25aef3' : '#4b5563',
+            accent: isNight ? '#4dc9f7' : '#d926a9',
+            border: isNight ? 'rgba(37, 174, 243, 0.3)' : '#e5e7eb',
             msgColor: isNight ? '#a0a0a0' : '#6b7280'
         };
 
@@ -105,7 +105,7 @@ class CountdownTimer extends HTMLElement {
                     line-height: 1;
                     margin-bottom: clamp(4px, 1vw, 8px);
                     font-variant-numeric: tabular-nums;
-                    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+                    text-shadow: 0 2px 10px rgba(37, 174, 243, 0.3);
                 }
 
                 .time-label {

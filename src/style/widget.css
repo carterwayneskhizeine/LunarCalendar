@@ -8,8 +8,8 @@
     font-family: Arial, Helvetica, "Microsoft Yahei";
     color: #1f2328;
     container-type: inline-size;
-    --primary-color: #d4af37;
-    --secondary-color: #f4d03f;
+    --primary-color: #25aef3;
+    --secondary-color: #4dc9f7;
     --base-size: 1px;
     --base-size-mobile: 1px;
 }
@@ -398,7 +398,7 @@ a {
 .mod-calendar.mode-night {
     /* 纯黑背景 */
     background: #000000;
-    color: #d4af37;
+    color: #25aef3;
 }
 
 /* 移除所有圆角 - 适配 DaisyUI 的扁平化或微圆角风格 */
@@ -432,10 +432,10 @@ a {
 }
 
 .mod-calendar.mode-night .info .day {
-    /* 金色背景 */
-    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 50%, #b8960e 100%);
+    /* 蓝色背景 */
+    background: linear-gradient(135deg, #4dc9f7 0%, #25aef3 50%, #1a8bc5 100%);
     color: #0a0a0a;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(37, 174, 243, 0.3);
 }
 
 .mod-calendar.mode-night .info a {
@@ -443,30 +443,30 @@ a {
 }
 
 .mod-calendar.mode-night .info .list {
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-top: 1px solid rgba(37, 174, 243, 0.3);
 }
 
 /* 日历主体 */
 .mod-calendar.mode-night .box {
     background: #000000;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(37, 174, 243, 0.2);
 }
 
 /* 选择器控件 */
 .mod-calendar.mode-night .selector a {
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(37, 174, 243, 0.3);
     background: #000000;
-    color: #d4af37;
+    color: #25aef3;
 }
 
 .mod-calendar.mode-night .selector a:hover {
-    border-color: #f4d03f;
-    color: #f4d03f;
+    border-color: #4dc9f7;
+    color: #4dc9f7;
     background: #000000;
 }
 
 .mod-calendar.mode-night .selector select {
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(37, 174, 243, 0.3);
     background: #000000;
     color: #e0e0e0;
 }
@@ -477,7 +477,7 @@ a {
 }
 
 .mod-calendar.mode-night table thead th {
-    color: #d4af37;
+    color: #25aef3;
     font-weight: 600;
 }
 
@@ -486,7 +486,7 @@ a {
 }
 
 .mod-calendar.mode-night table thead tr {
-    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 2px solid rgba(37, 174, 243, 0.3);
 }
 
 .mod-calendar.mode-night table td {
@@ -499,9 +499,9 @@ a {
 }
 
 .mod-calendar.mode-night table tbody a:hover {
-    border: 1px solid #d4af37;
-    background: rgba(212, 175, 55, 0.1);
-    color: #f4d03f;
+    border: 1px solid #25aef3;
+    background: rgba(37, 174, 243, 0.1);
+    color: #4dc9f7;
 }
 
 .mod-calendar.mode-night table .s1 {
@@ -514,8 +514,8 @@ a {
 
 /* 状态样式 */
 .mod-calendar.mode-night table td.active a {
-    border: 1px solid #d4af37;
-    background: #d4af37;
+    border: 1px solid #25aef3;
+    background: #25aef3;
     color: #0a0a0a;
 }
 
@@ -525,31 +525,31 @@ a {
     color: #0a0a0a;
 }
 
-/* 今天的日期被选中：金黄色 */
+/* 今天的日期被选中：蓝色 */
 .mod-calendar.mode-night table td.today.active a .s1,
 .mod-calendar.mode-night table td.today.active a .s2 {
-    color: #d4af37;
+    color: #25aef3;
 }
 
-/* 节假日被选中：金色 */
+/* 节假日被选中：蓝色 */
 .mod-calendar.mode-night table td.holiday.active a .s1,
 .mod-calendar.mode-night table td.holiday.active a .s2 {
-    color: #d4af37;
+    color: #25aef3;
 }
 
-/* 调休上班日被选中：金色 */
+/* 调休上班日被选中：蓝色 */
 .mod-calendar.mode-night table td.work.active a .s1,
 .mod-calendar.mode-night table td.work.active a .s2 {
-    color: #d4af37;
+    color: #25aef3;
 }
 
 .mod-calendar.mode-night table td.holiday a {
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(37, 174, 243, 0.15);
+    border: 1px solid rgba(37, 174, 243, 0.3);
 }
 
 .mod-calendar.mode-night table td.holiday i {
-    color: #f4d03f;
+    color: #4dc9f7;
 }
 
 .mod-calendar.mode-night table td.work a {
@@ -561,8 +561,8 @@ a {
 }
 
 .mod-calendar.mode-night table td.today a {
-    background: rgba(212, 175, 55, 0.2);
-    border: 1px solid rgba(244, 208, 63, 0.6);
+    background: rgba(37, 174, 243, 0.2);
+    border: 1px solid rgba(77, 201, 247, 0.6);
 }
 
 .mod-calendar.mode-night table td.disabled a {
@@ -577,7 +577,7 @@ a {
     }
 
     .mod-calendar.mode-night .selector a.goback {
-        background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+        background: linear-gradient(135deg, #4dc9f7 0%, #25aef3 100%);
         color: #0a0a0a;
         border-radius: 4px !important;
     }

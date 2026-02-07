@@ -94,8 +94,8 @@ calendar.getToday();
 通过 CSS 变量定制颜色:
 ```css
 widget-calendar {
-    --primary-color: #d4af37;    /* 主色调 - 金色 */
-    --secondary-color: #f4d03f;  /* 辅助色 - 浅金色 */
+    --primary-color: #25aef3;    /* 主色调 - 蓝色 */
+    --secondary-color: #4dc9f7;  /* 辅助色 - 浅蓝色 */
 }
 ```
 
@@ -140,9 +140,9 @@ gap: clamp(8px, 2vw, 24px);
 
 ```css
 /* 金色系列 */
---gold-primary: #d4af37;   /* 主金色 */
---gold-light: #f4d03f;     /* 浅金色 - 高光 */
---gold-dark: #b8960e;      /* 深金色 - 阴影 */
+--blue-primary: #25aef3;   /* 主蓝色 */
+--blue-light: #4dc9f7;     /* 浅蓝色 - 高光 */
+--blue-dark: #1a8bc5;      /* 深蓝色 - 阴影 */
 
 /* 灰色系列 */
 --gray-dark: #1a1a1a;      /* 深灰 */
@@ -162,10 +162,10 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                gold: {
-                    primary: '#d4af37',
-                    light: '#f4d03f',
-                    dark: '#b8960e',
+                blue: {
+                    primary: '#25aef3',
+                    light: '#4dc9f7',
+                    dark: '#1a8bc5',
                 },
                 gray: {
                     dark: '#1a1a1a',
@@ -177,9 +177,9 @@ tailwind.config = {
         daisyui: {
             themes: [{
                 luxury: {
-                    "primary": "#d4af37",
-                    "secondary": "#f4d03f",
-                    "accent": "#b8960e",
+                    "primary": "#25aef3",
+                    "secondary": "#4dc9f7",
+                    "accent": "#1a8bc5",
                     "neutral": "#404040",
                     "base-100": "#0a0a0a",
                     "base-200": "#1a1a1a",
@@ -198,17 +198,17 @@ tailwind.config = {
 ```css
 .mod-calendar.mode-night {
     background: #000000;
-    color: #d4af37;
+    color: #25aef3;
 }
 
 .mod-calendar.mode-night .info .day {
-    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 50%, #b8960e 100%);
+    background: linear-gradient(135deg, #4dc9f7 0%, #25aef3 50%, #1a8bc5 100%);
     color: #0a0a0a;
 }
 
 .mod-calendar.mode-night table td.active a {
-    border: 1px solid #d4af37;
-    background: #d4af37;
+    border: 1px solid #25aef3;
+    background: #25aef3;
     color: #0a0a0a;
 }
 ```
@@ -306,7 +306,7 @@ SVG Data URI 格式,金色圆形:
 // countdown-timer.js 内部
 const theme = {
     bg: isNight ? 'rgba(10, 10, 10, 0)' : '#ffffff',
-    textSecondary: isNight ? '#d4af37' : '#4b5563',
+    textSecondary: isNight ? '#25aef3' : '#4b5563',
     // ...
 };
 ```

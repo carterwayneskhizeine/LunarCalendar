@@ -7,7 +7,7 @@
     <meta name="description" content="农历夜历" />
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23f0d577%22/></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%2325aef3%22/></svg>" />
 
     <!-- Tailwind CSS & DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -22,10 +22,10 @@
                         sans: ['Inter', 'Segoe UI', 'Roboto', 'sans-serif'],
                     },
                     colors: {
-                        gold: {
-                            primary: '#d4af37',
-                            light: '#f4d03f',
-                            dark: '#b8960e',
+                        blue: {
+                            primary: '#25aef3',
+                            light: '#4dc9f7',
+                            dark: '#1a8bc5',
                         },
                         gray: {
                             dark: '#1a1a1a',
@@ -38,9 +38,9 @@
                     themes: [
                         {
                             luxury: {
-                                "primary": "#d4af37",
-                                "secondary": "#f4d03f",
-                                "accent": "#b8960e",
+                                "primary": "#25aef3",
+                                "secondary": "#4dc9f7",
+                                "accent": "#1a8bc5",
                                 "neutral": "#404040",
                                 "base-100": "#0a0a0a",
                                 "base-200": "#1a1a1a",
@@ -70,35 +70,35 @@
             display: block;
             width: 100%;
             max-width: none;
-            --primary-color: #d4af37; /* 金色 */
-            --secondary-color: #f4d03f; /* 浅金色 */
+            --primary-color: #25aef3; /* 蓝色 */
+            --secondary-color: #4dc9f7; /* 浅蓝色 */
         }
 
         /* 自定义主题颜色 */
         :root {
-            --gold-primary: #d4af37;
-            --gold-light: #f4d03f;
-            --gold-dark: #b8960e;
+            --blue-primary: #25aef3;
+            --blue-light: #4dc9f7;
+            --blue-dark: #1a8bc5;
             --gray-dark: #1a1a1a;
             --gray-medium: #2d2d2d;
             --gray-light: #404040;
         }
 
         /* 文字渐变效果 */
-        .gold-gradient-text {
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+        .blue-gradient-text {
+            background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue-primary) 50%, var(--blue-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* 卡片金色边框效果 */
+        /* 卡片蓝色边框效果 */
         .card {
-            border-color: rgba(212, 175, 55, 0.2);
+            border-color: rgba(37, 174, 243, 0.2);
         }
 
         .card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
+            border-color: rgba(37, 174, 243, 0.4);
         }
     </style>
 
